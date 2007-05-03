@@ -1,6 +1,6 @@
 %define name tabe
 %define version 0.2.6
-%define release %mkrel 5
+%define release %mkrel 6
 
 %define	major	2
 %define libname %mklibname tabe %{major}
@@ -59,7 +59,7 @@ cp script/configure.in .
 %build
 %configure \
 	--enable-shared \
-	--datadir=%{_libdir}/tabe \
+	--datadir=%{_datadir}/tabe \
 	--with-x \
 	--x-includes=%{_includedir} \
 	--x-libraries=%{_libdir} \
@@ -69,7 +69,7 @@ make
 
 %install
 rm -rf %{buildroot}
-%makeinstall datadir=%{buildroot}%{_libdir}/tabe
+%makeinstall datadir=%{buildroot}%{_datadir}/tabe
 
 # AdamW: shouldn't be needed with xcin 2.5.3.pre2
 # Make link so that xcin-2.5 can use yin.db and tsi.db
@@ -95,7 +95,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %doc COPYING  doc/libtabe.sgml
 %{_bindir}/*
-%{_libdir}/%{name}
+%{_datadir}/%{name}
 
 %files -n %{libname}
 %defattr(-,root,root,-)
