@@ -1,6 +1,6 @@
 %define name tabe
 %define version 0.2.6
-%define release %mkrel 6
+%define release %mkrel 7
 
 %define	major	2
 %define libname %mklibname tabe %{major}
@@ -18,7 +18,7 @@ Source:		%{name}-%{version}.tar.bz2
 Patch0:		%{name}-db4.1.patch
 Patch1:		%{name}-0.2.3-notestdb.patch
 
-BuildRequires:	db4-devel >= 4.1
+BuildRequires:	db4.1-devel
 BuildRequires:	XFree86-devel
 Requires:	%{libname} = %{version}-%{release}
 Requires:	locales-zh
