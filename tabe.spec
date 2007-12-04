@@ -19,7 +19,7 @@ Patch0:		%{name}-db4.1.patch
 Patch1:		%{name}-0.2.3-notestdb.patch
 
 BuildRequires:	db4.1-devel
-BuildRequires:	XFree86-devel
+BuildRequires:	X11-devel
 Requires:	%{libname} = %{version}-%{release}
 Requires:	locales-zh
 Provides:	libtabe
