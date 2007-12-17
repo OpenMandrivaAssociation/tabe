@@ -12,7 +12,6 @@ Release:	%{release}
 License:	BSD style
 Group:		System/Libraries
 URL:		http://libtabe.sourceforge.net/
-Buildroot:	%_tmppath/%{name}-%{version}-%{release}-root
 
 Source:		%{name}-%{version}.tar.bz2
 Patch0:		%{name}-db4.1.patch
