@@ -71,9 +71,13 @@ rm -rf %{buildroot}
 
 %makeinstall datadir=%{buildroot}%{_datadir}/tabe
 
+%if %mdkversion < 200900
 %post -n %{libname} -p /sbin/ldconfig
+%endif
 
+%if %mdkversion < 200900
 %postun -n %{libname} -p /sbin/ldconfig
+%endif
 
 %clean
 rm -rf %{buildroot}
