@@ -10,11 +10,9 @@ License:	BSD style
 Group:		System/Libraries
 URL:		http://libtabe.sourceforge.net/
 Source:		%{name}-%{version}.tar.bz2
-Patch0:		%{name}-db4.1.patch
-Patch1:		%{name}-0.2.3-notestdb.patch
-BuildRequires:	db4.2-devel
-BuildRequires:	X11-devel
-BuildRequires:	libtool
+Patch0:		http://ftp.de.debian.org/debian/pool/main/libt/libtabe/libtabe_0.2.6-1.2.diff.gz
+Patch1:		tabe-0.2.6-link.patch
+BuildRequires:	db4-devel
 Requires:	%{libname} = %{version}-%{release}
 Requires:	locales-zh
 Provides:	libtabe = %{version}-%{release}
@@ -48,20 +46,15 @@ Chinese lexicons library for xcin-2.5's bimsphone input method.
 This package contains static libraries and headers files.
 
 %prep
-
 %setup -q -n %{name}
-%patch0 -p1 -b .db41
-
-cp script/configure.in .
-libtoolize --copy --force
+%patch0 -p1
+%patch1 -p0
 
 %build
-%configure \
+export CFLAGS="%optflags %ldflags"
+%configure2_5x \
 	--enable-shared \
 	--datadir=%{_datadir}/tabe \
-	--with-x \
-	--x-includes=%{_includedir} \
-	--x-libraries=%{_libdir} \
 	--with-dbinc=%{_includedir}/db4
 
 make
