@@ -5,7 +5,7 @@
 Summary:	Chinese lexicons library for xcin-2.5
 Name:		tabe
 Version:	0.2.6
-Release:	12
+Release:	13
 License:	BSD style
 Group:		System/Libraries
 URL:		http://libtabe.sourceforge.net/
@@ -13,6 +13,7 @@ Source:		%{name}-%{version}.tar.bz2
 Patch0:		http://ftp.de.debian.org/debian/pool/main/libt/libtabe/libtabe_0.2.6-1.2.diff.gz
 Patch1:		tabe-0.2.6-link.patch
 BuildRequires:	db-devel
+BuildRequires:	libx11-devel
 Requires:	%{libname} = %{version}-%{release}
 Requires:	locales-zh
 Provides:	libtabe = %{version}-%{release}
@@ -91,6 +92,7 @@ rm -rf %{buildroot}
 %files -n %{develname}
 %defattr(-,root,root)
 %doc doc/*.txt
-%{_includedir}/*
+%{_includedir}/bims.h
+%{_includedir}/tabe.h
 %{_libdir}/*.so
 %{_libdir}/*.a
