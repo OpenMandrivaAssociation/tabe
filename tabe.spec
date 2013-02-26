@@ -5,7 +5,7 @@
 Summary:	Chinese lexicons library for xcin-2.5
 Name:		tabe
 Version:	0.2.6
-Release:	13
+Release:	14
 License:	BSD style
 Group:		System/Libraries
 URL:		http://libtabe.sourceforge.net/
