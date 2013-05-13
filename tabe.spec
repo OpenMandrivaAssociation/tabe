@@ -5,7 +5,7 @@
 Summary:	Chinese lexicons library for xcin-2.5
 Name:		tabe
 Version:	0.2.6
-Release:	14
+Release:	15
 License:	BSD style
 Group:		System/Libraries
 URL:		http://libtabe.sourceforge.net/
@@ -18,7 +18,6 @@ Requires:	%{libname} = %{version}-%{release}
 Requires:	locales-zh
 Provides:	libtabe = %{version}-%{release}
 Obsoletes:	libtabe
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Chinese lexicons library for xcin-2.5's bimsphone input method.
