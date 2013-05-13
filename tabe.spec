@@ -13,7 +13,7 @@ Source:		%{name}-%{version}.tar.bz2
 Patch0:		http://ftp.de.debian.org/debian/pool/main/libt/libtabe/libtabe_0.2.6-1.2.diff.gz
 Patch1:		tabe-0.2.6-link.patch
 BuildRequires:	db-devel
-BuildRequires:	libx11-devel
+BuildRequires:	pkgconfig(x11)
 Requires:	%{libname} = %{version}-%{release}
 Requires:	locales-zh
 Provides:	libtabe = %{version}-%{release}
