@@ -12,6 +12,11 @@ URL:		https://libtabe.sourceforge.net/
 Source:		%{name}-%{version}.tar.bz2
 Patch0:		http://ftp.de.debian.org/debian/pool/main/libt/libtabe/libtabe_0.2.6-1.2.diff.gz
 Patch1:		tabe-0.2.6-link.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	db-devel
 BuildRequires:	pkgconfig(x11)
 Requires:	%{libname} = %{version}-%{release}
